@@ -1,0 +1,72 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lato|PT+Sans|Nunito|Ropa+Sans" rel="stylesheet">
+
+
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <!-- <li>Tips</li>
+        <li>Train</li> -->
+      </ul>
+        <img src="../images/logo.jpg">
+    </nav>
+
+    <div id="container" class="container">
+      <video autoplay playsinline muted id="webcam" width="345" height="195" hidden></video>
+      <div>
+        <button id="right" hidden>Straight</button>
+        <button id="wrong" hidden> Slouch </button>
+      </div>
+      <div id="question" hidden>
+        How often should it check your posture?
+      </div>
+      <div>
+        <select id="frequency" hidden>
+          <option value="5000"></option>
+          <option value="5000">Every 5 seconds</option>
+          <option value="10000">Every 10 seconds</option>
+          <option value="50000">Every 5 minutes</option>
+          <option value="100000">Every 10 minutes</option>
+        </select>
+      </div>
+      <div id="notification" hidden>
+        What type of notification would you like?
+      </div>
+      <div id="option" class="container" hidden>
+        <button id="visual">Visual</button>
+        <button id="audio">Audio</button>
+      </div>
+      <div>
+        <button id="start" hidden>Start</button>
+      </div>
+      <div>
+        <button id="resume" hidden>Resume</button>
+        <button id="again" hidden>Refine</button>
+      </div>
+      <div id="train">
+        <div>
+          <p>Be alerted when you're slouching in front of your computer. Train the app to recognize your posture in just a few clicks.</p>
+        </div>
+        <div>
+          <button>Train the App</button>
+        </div>
+      </div>
+      <div id="alert" hidden></div>
+      <div id="predictions" hidden></div>
+      <div id="monitoring" hidden>Monitoring slouch...</div>
+      <button id="stop" hidden>Stop</button>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
