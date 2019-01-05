@@ -70,10 +70,10 @@ async function setupWebcam() {
 
 //LOAD MOBILENET
 async function load() {
-  console.log('Loading mobilenet..');
+  // console.log('Loading mobilenet..');
   // Load the model.
   net = await mobilenet.load();
-  console.log('Sucessfully loaded model');
+  // console.log('Sucessfully loaded model');
   await setupWebcam();
 }
 
@@ -99,7 +99,7 @@ async function checkSlouch() {
       prediction: ${classes[result.classIndex]}\n
       probability: ${result.confidences[result.classIndex]}`;
   }
-  console.log("RESULT", classes[result.classIndex])
+  // console.log("RESULT", classes[result.classIndex])
 
   if (classes[result.classIndex] === 'B') {
     if (notificationStyle === 'audio') {
@@ -132,6 +132,7 @@ async function checkSlouch() {
 
 //DOM ELEMENTS
 let train = document.getElementById('train');
+let description = document.getElementById('description')
 let right = document.getElementById('right')
 let wrong = document.getElementById('wrong')
 let start = document.getElementById('start');
@@ -150,8 +151,8 @@ let visualNot = document.getElementById('visual');
 let audioNot = document.getElementById('audio');
 
 //COLLECTIONS OF ELEMENTS FOR VIEWS
-let trainingView = [webcam, right, wrong, start, train, frequency, question, notification, options];
-let monitoringView = [right, wrong, start, stop, monitoring, frequency, question, notification, options];
+let trainingView = [webcam, right, wrong, start, train, frequency, question, notification, options, description];
+let monitoringView = [right, wrong, start, stop, monitoring, frequency, question, notification, options, description];
 let resumeView = [stop, resume, again, webcam, monitoring];
 
 //HELPER FUNCTIONS FOR EVENT LISTENERS
