@@ -45,7 +45,6 @@ app.use((err, req, res, next) => {
   res.send(err.message || 'Internal server error')
 })
 
-const port = process.env.PORT || 3333;
-app.listen(port, () => {
-  console.log(`Listening on port ${port}!`)
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Listening!')
 })
